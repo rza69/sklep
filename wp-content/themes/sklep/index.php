@@ -234,7 +234,7 @@
 								</a>
 								<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
 								<div class="product-wid-price">
-									<ins>$400.00</ins> <del>$425.00</del>
+									<ins>$<? $field = get_field('p_old_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></ins> <del>$<? $field = get_field('p_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></del>
 								</div>                            
 							</div>
 						<?php endwhile; ?>
@@ -258,7 +258,7 @@
 								</a>
 								<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
 								<div class="product-wid-price">
-									<ins>$400.00</ins> <del>$425.00</del>
+									<ins>$<? $field = get_field('p_old_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></ins> <del>$<? $field = get_field('p_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></del>
 								</div>                            
 							</div>
 						<?php endwhile; ?>
@@ -282,7 +282,7 @@
 								</a>
 								<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
 								<div class="product-wid-price">
-									<ins>$400.00</ins> <del>$425.00</del>
+									<ins>$<? $field = get_field('p_old_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></ins> <del>$<? $field = get_field('p_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></del>
 								</div>                            
 							</div>
 						<?php endwhile; ?>
