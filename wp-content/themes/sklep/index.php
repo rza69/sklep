@@ -31,50 +31,9 @@
 	<? wp_head(); ?>
   </head>
   <body>
-   
-    <div class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="user-menu">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">USD</a></li>
-                                    <li><a href="#">INR</a></li>
-                                    <li><a href="#">GBP</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End header area -->
-    
-    <div class="site-branding-area">
+  
+  
+	<div class="site-branding-area">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -105,14 +64,12 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop page</a></li>
-                        <li><a href="single-product.html">Single product</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Others</a></li>
-                        <li><a href="#">Contact</a></li>
+						<? $firs_link = 1; ?>
+						<? $menu = menu_mass('menu'); ?>
+						<? foreach($menu as $item): ?>
+							<li <? if($firs_link == 1): ?> class="active" <? endif; ?>><a href="<? echo $item['url'] ?>"><? echo $item['title'] ?></a></li>
+							<? $firs_link = 2; ?>
+						<? endforeach; ?>
                     </ul>
                 </div>  
             </div>
@@ -205,95 +162,32 @@
                     <div class="latest-product">
                         <h2 class="section-title">Latest Products</h2>
                         <div class="product-carousel">
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="<?php bloginfo('template_url') ?>/img/product-1.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.html">Samsung Galaxy s5- 2015</a></h2>
-                                
-                                <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
-                                </div> 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="<?php bloginfo('template_url') ?>/img/product-2.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2>Nokia Lumia 1320</h2>
-                                <div class="product-carousel-price">
-                                    <ins>$899.00</ins> <del>$999.00</del>
-                                </div> 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="<?php bloginfo('template_url') ?>/img/product-3.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2>LG Leon 2015</h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins> <del>$425.00</del>
-                                </div>                                 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="<?php bloginfo('template_url') ?>/img/product-4.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.html">Sony microsoft</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$200.00</ins> <del>$225.00</del>
-                                </div>                            
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="<?php bloginfo('template_url') ?>/img/product-5.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2>iPhone 6</h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$1200.00</ins> <del>$1355.00</del>
-                                </div>                                 
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="<?php bloginfo('template_url') ?>/img/product-6.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-                                
-                                <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins>
-                                </div>                            
-                            </div>
+							<? $query = new WP_Query(array('post_type' => 'phone','category-phone' => 'phones','posts_per_page' => 10)); ?>
+							<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+								<div class="single-product">
+									<div class="product-f-image">
+										<? $img = get_field('p_photo'); ?> 
+										<? if(!empty($img['url'])): ?>
+											<img src="<? echo $img['url']; ?>" alt="">
+										<? endif; ?>
+										
+										<div class="product-hover">
+											<a href="?add_cart=<? echo get_the_ID(); ?>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+											<a href="<? the_permalink(); ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+										</div>
+									</div>
+									
+									<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
+									
+									<div class="product-carousel-price">
+										<ins>$<? $field = get_field('p_old_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></ins> <del>$<? $field = get_field('p_price'); ?> <? if(!empty($field)): ?> <? echo $field; ?> <? endif; ?></del>
+									</div> 
+								</div>
+							<?php endwhile; ?>
+							<!-- post navigation -->
+							<?php else: ?>
+							<!-- no posts found -->
+							<?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -309,7 +203,6 @@
                     <div class="brand-wrapper">
                         <div class="brand-list">
                             <img src="<?php bloginfo('template_url') ?>/img/brand1.png" alt="">
-                            <img src="<?php bloginfo('template_url') ?>/img/brand2.png" alt="">
                             <img src="<?php bloginfo('template_url') ?>/img/brand3.png" alt="">
                             <img src="<?php bloginfo('template_url') ?>/img/brand4.png" alt="">
                             <img src="<?php bloginfo('template_url') ?>/img/brand5.png" alt="">
@@ -330,145 +223,73 @@
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top Sellers</h2>
-                        <a href="" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new mac book 2015</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
+                        <? $query = new WP_Query(array('post_type' => 'phone','category-phone' => 'phones','posts_per_page' => 3,'orderby' => 'rand')); ?>
+						<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+							<div class="single-wid-product">
+								<a href="<? the_permalink(); ?>">
+									<? $img = get_field('p_photo'); ?> 
+									<? if(!empty($img['url'])): ?>
+										<img src="<? echo $img['url']; ?>" alt="" class="product-thumb">
+									<? endif; ?>	
+								</a>
+								<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
+								<div class="product-wid-price">
+									<ins>$400.00</ins> <del>$425.00</del>
+								</div>                            
+							</div>
+						<?php endwhile; ?>
+						<!-- post navigation -->
+						<?php else: ?>
+						<!-- no posts found -->
+						<?php endif; ?>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Recently Viewed</h2>
-                        <a href="#" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony Smart Air Condtion</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
+                        <? $query = new WP_Query(array('post_type' => 'phone','category-phone' => 'phones','posts_per_page' => 3,'orderby' => 'rand')); ?>
+						<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+							<div class="single-wid-product">
+								<a href="<? the_permalink(); ?>">
+									<? $img = get_field('p_photo'); ?> 
+									<? if(!empty($img['url'])): ?>
+										<img src="<? echo $img['url']; ?>" alt="" class="product-thumb">
+									<? endif; ?>	
+								</a>
+								<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
+								<div class="product-wid-price">
+									<ins>$400.00</ins> <del>$425.00</del>
+								</div>                            
+							</div>
+						<?php endwhile; ?>
+						<!-- post navigation -->
+						<?php else: ?>
+						<!-- no posts found -->
+						<?php endif; ?>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="single-product-widget">
                         <h2 class="product-wid-title">Top New</h2>
-                        <a href="#" class="wid-view-more">View All</a>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
-                        <div class="single-wid-product">
-                            <a href="single-product.html"><img src="<?php bloginfo('template_url') ?>/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
-                            <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
-                            </div>                            
-                        </div>
+                        <? $query = new WP_Query(array('post_type' => 'phone','category-phone' => 'phones','posts_per_page' => 3,'orderby' => 'rand')); ?>
+						<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+							<div class="single-wid-product">
+								<a href="<? the_permalink(); ?>">
+									<? $img = get_field('p_photo'); ?> 
+									<? if(!empty($img['url'])): ?>
+										<img src="<? echo $img['url']; ?>" alt="" class="product-thumb">
+									<? endif; ?>	
+								</a>
+								<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
+								<div class="product-wid-price">
+									<ins>$400.00</ins> <del>$425.00</del>
+								</div>                            
+							</div>
+						<?php endwhile; ?>
+						<!-- post navigation -->
+						<?php else: ?>
+						<!-- no posts found -->
+						<?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -491,29 +312,15 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">User Navigation </h2>
-                        <ul>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Order history</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                            <li><a href="#">Vendor contact</a></li>
-                            <li><a href="#">Front page</a></li>
-                        </ul>                        
-                    </div>
-                </div>
+                <? $cat = get_terms(array('taxonomy' => array('category-phone'), 'child_of' => 2));  ?>
                 
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="#">Mobile Phone</a></li>
-                            <li><a href="#">Home accesseries</a></li>
-                            <li><a href="#">LED TV</a></li>
-                            <li><a href="#">Computer</a></li>
-                            <li><a href="#">Gadets</a></li>
+							<? foreach($cat as $item): ?>
+								<li><a href="<? echo get_term_link($item->term_id) ?>"><? echo $item->name ?></a></li>
+							<? endforeach; ?>
                         </ul>                        
                     </div>
                 </div>
