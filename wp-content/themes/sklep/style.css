@@ -716,6 +716,8 @@ width: 10px;
 input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #ddd;
     padding: 10px;
+	display: block;
+	margin-bottom: 20px;
 }
 input[type="submit"], button[type=submit] {
     background: none repeat scroll 0 0 #5a88ca;

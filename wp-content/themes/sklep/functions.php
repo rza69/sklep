@@ -53,6 +53,21 @@
 		echo $pages . paginate_links($a);
 		if ($max > 1) echo '</div>';
 	}
-
+	
+	session_start();
+	if(isset($_GET['add_cart']))
+	{
+		if(!isset($_SESSION['count'])){ $_SESSION['count'] = 0; }
+		
+		if(!in_array($_GET['add_cart'],$_SESSION['products']))
+		{
+			$_SESSION['products'][$_SESSION['count']] = $_GET['add_cart'];
+			$_SESSION['count'] = $_SESSION['count'] + 1;
+		}
+		
+	}
+	
+	
+	
 
 ?>
